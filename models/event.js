@@ -8,7 +8,6 @@ const eventSchema = new Schema({
   event: { type: String, required: true },
   thumbnail: { type: String },
   selected: {type: Boolean, default: false },
-  // username : [{type: Schema.Types.ObjectId, ref: 'Users' }] //trying to get user view to work
   username: {type: String}
 });
 
