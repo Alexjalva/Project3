@@ -1,38 +1,17 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
-class Post extends Model {}
+//Favorite Recipes
+const faveSchema = new Schema({
+  title: { type: String, required: true },
+  href: { type: String, required: true },
+  event: { type: String, required: true },
+  thumbnail: { type: String },
+  selected: {type: Boolean, default: false },
+  // username : [{type: Schema.Types.ObjectId, ref: 'Users' }] //trying to get user view to work
+  username: {type: String}
+});
 
-Post.init(
-    {
-      id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        primaryKey: true,
-        autoIncrement: true
-      },
-      title: {
-        type: DataTypes.STRING,
-        allowNull: false
-      },
-      post_content: {
-        type: DataTypes.TEXT,
-        allowNull: true
-      },
-      user_id: {
-        type: DataTypes.INTEGER,
-        references: {
-          model: 'user',
-          key: 'id'
-        }
-      }
-    },
-    {
-      sequelize,
-      freezeTableName: true,
-      underscored: true,
-      modelName: 'post'
-    }
-  );
+const Faves = mongoose.model("event", faveSchema);
 
-  module.exports = Post;
+module.exports = Faves;
