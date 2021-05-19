@@ -24,6 +24,7 @@ function Books() {
         setBooks(res.data)
       )
       .catch(err => console.log(err));
+    API.getEvents().then(res => console.log(res));
   };
 
   // Deletes a book from the database with a given id, then reloads books from the db
