@@ -1,5 +1,4 @@
 const express = require("express");
-const passport = require("passport");
 const mongoose = require("mongoose");
 const passport = require("passport");
 const routes = require("./routes");
