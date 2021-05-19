@@ -1,6 +1,7 @@
 const express = require("express");
-
+const passport = require("passport");
 const mongoose = require("mongoose");
+const passport = require("passport");
 const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 3001;
