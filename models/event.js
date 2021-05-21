@@ -4,13 +4,11 @@ const Schema = mongoose.Schema;
 //Favorite event
 const eventSchema = new Schema({
   title: { type: String, required: true },
-  href: { type: String, required: true },
-  event: { type: String, required: true },
+  id: { type: String, required: true },
+  odds: { type: String, required: true },
   thumbnail: { type: String },
-  selected: {type: Boolean, default: false },
-  username: {type: String}
 });
 
-const Event = mongoose.model("event", eventchema);
+const Event = mongoose.model("event", eventSchema);
 
 module.exports = Event;

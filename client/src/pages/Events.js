@@ -27,11 +27,9 @@ function Events() {
             </Jumbotron>
             {events.length ? (
               <List>
-                {console.log(events)}
-                {console.log(newArray)}
                 {events.map(event => (
                   <ListItem key={event.id}>
-                    <Link to={"/events/" +  event.query}>
+                    <Link to={{pathname: `/events/${event.query}`, title:`${event.teams[0]} vs ${event.teams[1]}`}} >
                       <strong>
                         {event.teams[0]} vs {event.teams[1]}
                       </strong>
