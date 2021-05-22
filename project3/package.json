@@ -23,6 +23,13 @@
     "axios": "^0.18.0",
     "express": "^4.16.3",
     "if-env": "^1.0.4",
+<<<<<<< HEAD
     "mongoose": "^5.12.10"
+=======
+    "mobx": "^6.3.0",
+    "mobx-react": "^7.1.0",
+    "mongodb": "^3.6.6",
+    "mongoose": "^5.3.16"
+>>>>>>> 2829cdeb75be8e5eb79fd2305a170bf24c1285ef
   }
 }

@@ -2,6 +2,9 @@ import axios from "axios";
 
 export default {
   // Gets all books
+  // getEvents: function() {
+  //   return axios.
+  // },
   getBooks: function() {
     return axios.get("/api/books");
   },
