@@ -4,6 +4,9 @@ import API from "../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
+import { DeleteBtn } from "../components/DeleteBtn";
+import {AddBtn} from "../components/AddBtn";
+
 
 function Events() {
   // Setting our component's initial state
@@ -27,16 +30,15 @@ function Events() {
             </Jumbotron>
             {events.length ? (
               <List>
-                {console.log(events)}
-                {console.log(newArray)}
                 {events.map(event => (
                   <ListItem key={event.id}>
-                    <Link to={"/events/" +  event.query}>
+                    <Link to={{pathname: `/events/${event.query}`, title:`${event.teams[0]} vs ${event.teams[1]}`}} >
                       <strong>
                         {event.teams[0]} vs {event.teams[1]}
                       </strong>
                     </Link>
-                    {/* <DeleteBtn onClick={() => deleteBook(book._id)} /> */}
+                    <DeleteBtn onClick={() => console.log(event._id)} />
+                    <AddBtn onClick={() => API.saveEvent(event)} />
                   </ListItem>
                 ))}
               </List>
