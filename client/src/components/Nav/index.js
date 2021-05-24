@@ -6,6 +6,7 @@ function Nav() {
       <a className="navbar-brand" href="/">
         Let's Bet
       </a>
+    
     </nav>
   );
 }

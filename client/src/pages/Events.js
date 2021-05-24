@@ -4,6 +4,8 @@ import API from "../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
+import {render} from 'react-dom';
+import {createUseStyles} from 'react-jss';
 
 function Events() {
   // Setting our component's initial state
