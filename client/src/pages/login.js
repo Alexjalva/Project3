@@ -4,7 +4,7 @@ import { Container, Row, Col } from '../components/Grid';
 import { Card } from '../components/Card';
 import { Input, FormBtn } from '../components/Form';
 
-class LoginForm extends Component {
+class Login extends Component {
   
   constructor() {
     super();
@@ -73,4 +73,4 @@ class LoginForm extends Component {
 	}
 }
 
-export default LoginForm;
+export default Login;
