@@ -16,11 +16,21 @@ export default {
     return axios.get("/api/books/" + id);
   },
   // Deletes the book with the given id
-  deleteBook: function(id) {
-    return axios.delete("/api/books/" + id);
+  deleteEvent: function(id) {
+    return axios.delete("/api/events/" + id);
   },
   // Saves a book to the database
-  saveBook: function(bookData) {
-    return axios.post("/api/books", bookData);
+  saveEvent: function(event) {
+    console.log(event);
+    return axios.post("/api/events/", {
+      "title": `${event.teams[0]} vs ${event.teams[1]}`,
+      "id": `${event.id}`,
+      "odds": `${event.sites[0].odds.h2h[0]}`
+    }); 
+    // axios.post("/api/books", bookData);
+  },
+  saveToUser: function(event){
+    return axios.post("api/events/user", event.id);
   }
 };
+
