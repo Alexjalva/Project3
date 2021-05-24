@@ -1,10 +1,13 @@
 import React, { useRef, useState } from 'react';
-import "./style.css";
+import AUTH from "./routes/auth";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 
 function SignUpForm() {
 
-    const nameRef = useRef();
+    const usernameRef = useRef();
     const emailRef = useRef();
+    
     const passwordRef = useRef();
 
     const [error, setError] = useState(null);
@@ -12,17 +15,16 @@ function SignUpForm() {
     const handleSubmit = event => {
         event.preventDefault();
 
-        if (!nameRef.current.value || !emailRef.current.value || !passwordRef.current.value) {
+        if (!usernameRef.current.value || !emailRef.current.value || !passwordRef.current.value) {
             setError("Missing a required field.");
             passwordRef.current.value = "";
             return;
         }
 
-        API.signup(nameRef.current.value, emailRef.current.value, passwordRef.current.value)
+        AUTH.signup(usernameRef.current.value, emailRef.current.value, passwordRef.current.value)
             .then(response => {
                 setError(null);
                 console.log(response);
-                refreshUserData(dispatch);
             })
             .catch(err => {
                 if (!err.response) {
@@ -40,14 +42,12 @@ function SignUpForm() {
     }
 
     return (
+       
 
-        <Card className="text-white rounded-0" style={{ margin: '0px' }}>
-            <Card.Img src={process.env.PUBLIC_URL + "/img/hero-img.jpg"} alt="Card image" />
-            <Card.ImgOverlay className="rounded-0">
-                {/* <Card.Text> */}
-                <Card body style={{ opacity: 0.9, marginTop: '60px', marginLeft: '90px', marginRight: '90px' }}>
+        <Form className="text-white rounded-0" style={{ margin: '0px' }}>
+                <Form body style={{ opacity: 0.9, marginTop: '60px', marginLeft: '90px', marginRight: '90px' }}>
                     <form className="mt-3 rounded">
-                        <ErrorMessage message={error} />
+                        {/* <Error message={error} /> */}
                         <div className="form-group">
                             <label htmlFor="inputEmail">Email Address</label>
                             <input type="email" className="form-control" id="inputEmail" aria-describedby="emailHelp" ref={emailRef} />
@@ -57,12 +57,10 @@ function SignUpForm() {
                             <label htmlFor="inputPassword">Create Password</label>
                             <input type="password" className="form-control" id="inputPassword" ref={passwordRef} />
                         </div>
-                        <button type="button ml-2" className="btn btn-success" onClick={event => handleSubmit(event)}>Submit</button>
+                        <Button type="button ml-2" className="btn btn-success" onClick={event => handleSubmit(event)}>Submit</Button>
                     </form>
-                </Card >
-                {/* </Card.Text> */}
-            </Card.ImgOverlay>
-        </Card>
+                </Form >
+        </Form>
 
     );
 }
