@@ -4,7 +4,7 @@ import EventDetail from "./pages/EventDetail";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
 import Events from "./pages/Events"
-import Login from "./pages/Login";
+import login from "./pages/login";
 
 function App() {
   return (
@@ -12,8 +12,8 @@ function App() {
       <div>
         <Nav />
         <Switch>
-        <Route exact path="/Login">
-            <Login />
+        <Route exact path="/login">
+            <login />
           </Route>
           <Route exact path={["/", "/events"]}>
             <Events />
