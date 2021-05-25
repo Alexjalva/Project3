@@ -11,7 +11,7 @@ function SignUpForm() {
     const usernameRef = useRef();
     const passwordRef = useRef();
 
-    const [err, setErr] = useState(null);
+    const [err, setError] = useState(null);
 
     const handleSubmit = event => {
         event.preventDefault();
