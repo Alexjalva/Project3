@@ -4,8 +4,6 @@ import API from "../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
-import {render} from 'react-dom';
-import {createUseStyles} from 'react-jss';
 
 function Events() {
   // Setting our component's initial state
@@ -23,7 +21,7 @@ function Events() {
     return (
       <Container fluid>
         <Row>
-          <Col size="lg-12">
+          <Col size="lg-12 bg-color-black">
             <Jumbotron>
               <h1>Upcoming Events</h1>
             </Jumbotron>

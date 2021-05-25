@@ -20,7 +20,7 @@ function EventDetail( props) {
   return (
       <Container fluid>
         <Row>
-          <Col size="md-12">
+          <Col size="md-12 ">
             <Jumbotron>
               <h1>
                 {/* {book.title} by {book.author} */}
