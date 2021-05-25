@@ -2,6 +2,7 @@ import React from "react";
 
 function Nav() {
   return (
+<<<<<<< HEAD
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Let's Bet</a>
@@ -18,6 +19,13 @@ function Nav() {
     </div>
   </div>
 </nav>
+=======
+    <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+      <a className="navbar-brand" href="/">
+        <strong>Bet on It</strong>
+      </a>
+    </nav>
+>>>>>>> 2ba74ee9fed85940f33d9523f5781350f1f456d0
   );
 }
     //<nav className="navbar navbar-expand-lg navbar-dark bg-dark">

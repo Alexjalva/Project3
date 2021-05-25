@@ -1,14 +1,13 @@
 import React, { useRef, useState } from 'react';
-import AUTH from "../utils/AUTH";
+import AUTH from "./routes/auth";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
 function SignUpForm() {
 
-    const firstnameRef = useRef();
-    const lastnameRef = useRef();
-    const emailRef = useRef();
     const usernameRef = useRef();
+    const emailRef = useRef();
+    
     const passwordRef = useRef();
 
     const [error, setError] = useState(null);
@@ -16,13 +15,13 @@ function SignUpForm() {
     const handleSubmit = event => {
         event.preventDefault();
 
-        if (!firstnameRef.current.value || !lastnameRef.current.value || !emailRef.current.value || !usernameRef.current.value || !passwordRef.current.value) {
+        if (!usernameRef.current.value || !emailRef.current.value || !passwordRef.current.value) {
             setError("Missing a required field.");
             passwordRef.current.value = "";
             return;
         }
 
-        AUTH.signup(firstnameRef.current.value, lastnameRef.current.value, emailRef.current.value, usernameRef.current.value, passwordRef.current.value)
+        AUTH.signup(usernameRef.current.value, emailRef.current.value, passwordRef.current.value)
             .then(response => {
                 setError(null);
                 console.log(response);
@@ -48,7 +47,7 @@ function SignUpForm() {
         <Form className="text-white rounded-0" style={{ margin: '0px' }}>
                 <Form body style={{ opacity: 0.9, marginTop: '60px', marginLeft: '90px', marginRight: '90px' }}>
                     <form className="mt-3 rounded">
-                        <err message={error} />
+                        {/* <Error message={error} /> */}
                         <div className="form-group">
                             <label htmlFor="inputEmail">Email Address</label>
                             <input type="email" className="form-control" id="inputEmail" aria-describedby="emailHelp" ref={emailRef} />

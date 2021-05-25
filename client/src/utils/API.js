@@ -8,19 +8,22 @@ export default {
   getHeadlines: function(query){
     return axios.get(`https://newsapi.org/v2/everything?q=${query}&from=2021-05-14&to=2021-05-14&sortBy=popularity&apiKey=f9706e42f9ac4d44a209a460017630c3`)
   },
-  getBooks: function() {
-    return axios.get("/api/books");
-  },
-  // Gets the book with the given id
-  getBook: function(id) {
-    return axios.get("/api/books/" + id);
-  },
   // Deletes the book with the given id
-  deleteBook: function(id) {
-    return axios.delete("/api/books/" + id);
+  deleteEvent: function(id) {
+    return axios.delete("/api/events/" + id);
   },
   // Saves a book to the database
-  saveBook: function(bookData) {
-    return axios.post("/api/books", bookData);
+  saveEvent: function(event) {
+    console.log(event);
+    return axios.post("/api/events/", {
+      "title": `${event.teams[0]} vs ${event.teams[1]}`,
+      "id": `${event.id}`,
+      "odds": `${event.sites[0].odds.h2h[0]}`
+    }); 
+    // axios.post("/api/books", bookData);
+  },
+  saveToUser: function(event){
+    return axios.post("api/events/user", event.id);
   }
 };
+
