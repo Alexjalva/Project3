@@ -15,6 +15,7 @@ function SignUpForm() {
 
     const handleSubmit = event => {
         event.preventDefault();
+        console.log(firstnameRef.current.value, lastnameRef.current.value, emailRef.current.value, usernameRef.current.value, passwordRef.current.value);
 
         if (!firstnameRef.current.value || !lastnameRef.current.value || !emailRef.current.value || !usernameRef.current.value || !passwordRef.current.value) {
             setError("Missing a required field.");
@@ -44,8 +45,8 @@ function SignUpForm() {
 
     return (
        
-                <Form body style={{ opacity: 0.9, marginTop: '60px', marginLeft: '90px', marginRight: '90px' }}>
-                    <form className="mt-3 rounded">
+                <Form style={{ opacity: 0.9, marginTop: '60px', marginLeft: '90px', marginRight: '90px' }}>
+                    <div className="mt-3 rounded">
                     <div className="form-group">
                             <label htmlFor="inputFirstname">First Name</label>
                             <input type="firstname" className="form-control" id="inputFirstname" ref={firstnameRef} />
@@ -68,7 +69,7 @@ function SignUpForm() {
                             <input type="password" className="form-control" id="inputPassword" ref={passwordRef} />
                         </div>
                         <Button type="button ml-2" className="btn btn-success" onClick={event => handleSubmit(event)}>Submit</Button>
-                    </form>
+                    </div>
                 </Form >
 
     );
