@@ -22,7 +22,7 @@ function App() {
           <Route exact path={["/", "/Login"]}>
             <Login />
           </Route>
-          <Route exact path="/events/:query">
+          <Route exact path="/Events/:query">
             <EventDetail />
           </Route>
           <Route>
