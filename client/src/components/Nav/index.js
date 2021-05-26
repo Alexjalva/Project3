@@ -12,7 +12,7 @@ function Nav() {
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav mr-auto">
           <li className="nav-item active">
-            <a className="nav-link" href="/">EVENTS <span className="sr-only">(current)</span></a>
+            <a className="nav-link" href="/">LOGIN <span className="sr-only">(current)</span></a>
           </li>
           <li className="nav-item">
             <a className="nav-link" href="/Events">MY STUFF</a>
