@@ -4,6 +4,8 @@ import EventDetail from "./pages/EventDetail";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
 import Events from "./pages/Events"
+import Login from "./pages/Login";
+import SignUp from "./pages/SignUp";
 
 function App() {
   return (
@@ -11,6 +13,12 @@ function App() {
       <div>
         <Nav />
         <Switch>
+        <Route exact path="/SignUp">
+            <SignUp />
+          </Route>
+        <Route exact path="/Login">
+            <Login />
+          </Route>
           <Route exact path={["/", "/events"]}>
             <Events />
           </Route>

@@ -8,13 +8,6 @@ export default {
   getHeadlines: function(query){
     return axios.get(`https://newsapi.org/v2/everything?q=${query}&from=2021-05-15&to=2021-05-23&sortBy=popularity&apiKey=f9706e42f9ac4d44a209a460017630c3`)
   },
-  getBooks: function() {
-    return axios.get("/api/books");
-  },
-  // Gets the book with the given id
-  getBook: function(id) {
-    return axios.get("/api/books/" + id);
-  },
   // Deletes the book with the given id
   deleteEvent: function(id) {
     return axios.delete("/api/events/" + id);
