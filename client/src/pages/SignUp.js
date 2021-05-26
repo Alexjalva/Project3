@@ -11,10 +11,11 @@ function SignUpForm() {
     const usernameRef = useRef();
     const passwordRef = useRef();
 
-    const [error, setError] = useState(null);
+    const [err, setError] = useState(null);
 
     const handleSubmit = event => {
         event.preventDefault();
+        console.log(firstnameRef.current.value, lastnameRef.current.value, emailRef.current.value, usernameRef.current.value, passwordRef.current.value);
 
         if (!firstnameRef.current.value || !lastnameRef.current.value || !emailRef.current.value || !usernameRef.current.value || !passwordRef.current.value) {
             setError("Missing a required field.");
@@ -44,24 +45,32 @@ function SignUpForm() {
 
     return (
        
-
-        <Form className="text-white rounded-0" style={{ margin: '0px' }}>
-                <Form body style={{ opacity: 0.9, marginTop: '60px', marginLeft: '90px', marginRight: '90px' }}>
-                    <form className="mt-3 rounded">
-                        <err message={error} />
+                <Form style={{ opacity: 0.9, marginTop: '60px', marginLeft: '90px', marginRight: '90px' }}>
+                    <div className="mt-3 rounded">
+                    <div className="form-group">
+                            <label htmlFor="inputFirstname">First Name</label>
+                            <input type="firstname" className="form-control" id="inputFirstname" ref={firstnameRef} />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="inputLastname">Last Name</label>
+                            <input type="lastname" className="form-control" id="inputLastname" ref={lastnameRef} />
+                        </div>
                         <div className="form-group">
                             <label htmlFor="inputEmail">Email Address</label>
-                            <input type="email" className="form-control" id="inputEmail" aria-describedby="emailHelp" ref={emailRef} />
-                            <small id="emailHelp" className="form-text text-muted">This will be used to login to Lets Bet!.</small>
+                            <input type="email" className="form-control" id="inputEmail" ref={emailRef} />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="inputUsername">username</label>
+                            <input type="username" className="form-control" id="inputUsername" ref={usernameRef} />
+                            <small id="usernameHelp" className="form-text text-muted">This will be used to login to Lets Bet!.</small>
                         </div>
                         <div className="form-group">
                             <label htmlFor="inputPassword">Create Password</label>
                             <input type="password" className="form-control" id="inputPassword" ref={passwordRef} />
                         </div>
                         <Button type="button ml-2" className="btn btn-success" onClick={event => handleSubmit(event)}>Submit</Button>
-                    </form>
+                    </div>
                 </Form >
-        </Form>
 
     );
 }
