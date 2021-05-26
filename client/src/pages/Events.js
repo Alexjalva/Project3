@@ -37,6 +37,9 @@ function Events() {
                         {event.teams[0]} vs {event.teams[1]}
                       </strong>
                     </Link>
+                    <p>
+                      Odds: {event.sites[0].odds.h2h[0]}
+                    </p>
                     <DeleteBtn onClick={() => console.log(event._id)} />
                     <AddBtn onClick={() => API.saveEvent(event)} />
                   </ListItem>

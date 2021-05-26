@@ -11,9 +11,12 @@ function EventDetail( props) {
   // When this component mounts, grab the book with the _id of props.match.params.id
   // e.g. localhost:3000/books/599dcb67f0f16317844583fc
   const {query} = useParams()
-  useEffect(() => {
+  useEffect(async () => {
     API.getHeadlines(query)
-      .then(res => {setHeadlines(res.data.articles);})
+      .then(res => {
+        setHeadlines(res.data.articles);
+      
+      })
       .catch(err => console.log(err));
   }, [])
 
@@ -23,9 +26,8 @@ function EventDetail( props) {
           <Col size="md-12">
             <Jumbotron>
               <h1>
-                {/* {book.title} by {book.author} */}
                 {query}
-                {console.log()}
+                {console.log(headlines)}
               </h1>
             </Jumbotron>
             {headlines.length ? (
