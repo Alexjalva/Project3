@@ -16,11 +16,11 @@ function App() {
         <Route exact path="/SignUp">
             <SignUp />
           </Route>
-        <Route exact path="/Login">
-            <Login />
-          </Route>
-          <Route exact path={["/", "/events"]}>
+        <Route exact path="/Events">
             <Events />
+          </Route>
+          <Route exact path={["/", "/Login"]}>
+            <Login />
           </Route>
           <Route exact path="/events/:query">
             <EventDetail />
