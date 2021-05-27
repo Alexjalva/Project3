@@ -23,7 +23,13 @@ function SignUpForm() {
             return;
         }
 
-        AUTH.signup(firstnameRef.current.value, lastnameRef.current.value, emailRef.current.value, usernameRef.current.value, passwordRef.current.value)
+        AUTH.signup({
+            "firstName": firstnameRef.current.value,
+            "lastName": lastnameRef.current.value,
+            "email": emailRef.current.value,
+            "username": usernameRef.current.value,
+            "password":passwordRef.current.value}
+            )
             .then(response => {
                 setError(null);
                 console.log(response);
@@ -41,6 +47,9 @@ function SignUpForm() {
                 passwordRef.current.value = "";
                 console.log(err);
             })
+            AUTH.login(usernameRef.current.value, passwordRef.current.value)
+            window.location.href='/home';
+
     }
 
     return (

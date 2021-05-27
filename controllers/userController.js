@@ -12,6 +12,7 @@ module.exports = {
     }
   },
   register: (req, res) => {
+    console.log(req);
     const { firstName, lastName, email, username, password } = req.body;
     // ADD VALIDATION
     db.User.findOne({ 'username': username }, (err, userMatch) => {
@@ -45,7 +46,7 @@ module.exports = {
   },
   auth: function(req, res, next) {
 		console.log(req.body);
-		console.log('================');
+		console.log('=====auth===========');
 		next();
   },
   authenticate: (req, res) => {

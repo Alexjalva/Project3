@@ -1,33 +1,57 @@
-import React from "react";
+import React, { useState, useEffect} from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import EventDetail from "./pages/EventDetail";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
 import Events from "./pages/Events"
-import Login from "./pages/Login";
+import Login from "./pages/login";
 import SignUp from "./pages/SignUp";
+import AUTH from "./utils/AUTH";
 
 function App() {
+  const [loggedIn, setLoggedIn] = useState([]);
+  const [user, setUser]= useState([]);
+
+  useEffect(() => {
+    AUTH.getUser().then(res => {
+      console.log(res);
+      if(!!res.data.user){
+        setLoggedIn(true);
+        setUser(res.data.user)
+        console.log("logged In");
+      }
+      else{
+        setLoggedIn(false);
+        setUser(null)
+      }
+    })
+  }, []);
   return (
     <Router>
       <div>
         <Nav />
         <Switch>
-        <Route exact path="/SignUp">
+        {!loggedIn && <Route exact path="/SignUp">
             <SignUp />
-          </Route>
-        <Route exact path="/Login">
-            <Login />
-          </Route>
-          <Route exact path={["/", "/events"]}>
+          </Route>}
+          {loggedIn && <Route exact path="/SignUp">
             <Events />
-          </Route>
-          <Route exact path="/events/:query">
+          </Route>}
+        {loggedIn && <Route exact path="/home">
+            <Events />
+          </Route>}
+          {!loggedIn && <Route exact path={["/", "/login"]}>
+            <Login />
+          </Route>}
+          {loggedIn && <Route exact path="/events/:query">
             <EventDetail />
-          </Route>
-          <Route>
+          </Route>}
+          {loggedIn && <Route>
             <NoMatch />
-          </Route>
+          </Route>}
+          {!loggedIn && <Route>
+            <Login />
+          </Route>}
         </Switch>
       </div>
     </Router>

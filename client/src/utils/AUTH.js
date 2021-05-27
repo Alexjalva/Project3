@@ -11,11 +11,13 @@ export default {
     return axios.post('/auth/logout');
   },
   // Log the user in
-  login: function(username, password) {
-    return axios.post('/auth/login', { username, password });
+  login: function(userInfo) {
+    console.log(userInfo)
+    return axios.post('/auth/login', userInfo);
   },
   // New user registration
   signup: function(userData) {
+    console.log(userData);
     return axios.post('/auth/signup', userData);
   }
 };
