@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import EventDetail from "./pages/EventDetail";
 import NoMatch from "./pages/NoMatch";
@@ -10,17 +10,17 @@ import AUTH from "./utils/AUTH";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState([]);
-  const [user, setUser]= useState([]);
+  const [user, setUser] = useState([]);
 
   useEffect(() => {
     AUTH.getUser().then(res => {
       console.log(res);
-      if(!!res.data.user){
+      if (!!res.data.user) {
         setLoggedIn(true);
         setUser(res.data.user)
         console.log("logged In");
       }
-      else{
+      else {
         setLoggedIn(false);
         setUser(null)
       }
@@ -31,14 +31,14 @@ function App() {
       <div>
         <Nav />
         <Switch>
-        {!loggedIn && <Route exact path="/SignUp">
+          {!loggedIn && <Route exact path="/SignUp">
             <SignUp />
           </Route>}
           {loggedIn && <Route exact path="/SignUp">
             <Events />
           </Route>}
-        {loggedIn && <Route exact path="/home">
-            <Events />
+          {loggedIn && <Route exact path="/home">
+            <Events props={user}/>
           </Route>}
           {!loggedIn && <Route exact path={["/", "/login"]}>
             <Login />
