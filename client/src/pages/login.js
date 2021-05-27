@@ -15,6 +15,7 @@ export default function Login() {
   }
 
   return (
+    <Form style={{ opacity: 0.9, marginTop: '60px', marginLeft: '90px', marginRight: '90px' }}>
     <div className="Login">
       <Form onSubmit={handleSubmit}>
 	  <Form.Group size="lg" controlId="username">
@@ -34,11 +35,12 @@ export default function Login() {
             onChange={(e) => setPassword(e.target.value)}
           />
         </Form.Group>
-        <Button block size="lg" type="submit" disabled={!validateForm()}>
+        <Button type="button ml-2" type="submit" disabled={!validateForm()}>
           Login
         </Button>
       </Form>
     </div>
+    </Form>
   );
 }
 

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Alice&display=swap');
 /* Add a black background color to the top navigation */
 .topnav {
   background-color: #333;
@@ -30,4 +31,8 @@
 /* Hide the link that should open and close the topnav on small screens */
 .topnav .icon {
   display: none;
+}
+
+a {
+  font-family: 'Alice', serif;
 }
