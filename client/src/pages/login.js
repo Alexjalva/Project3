@@ -39,11 +39,7 @@ export default function Login() {
             onChange={(e) => setPassword(e.target.value)}
           />
         </Form.Group>
-<<<<<<< HEAD
-        <Button block size="md" type="submit" disabled={!validateForm()}>
-=======
         <Button type="button ml-2" type="submit" disabled={!validateForm()}>
->>>>>>> 1035f2d611dfed5ed163cc7b78db83bac01412f2
           Login
         </Button>
       </Form>
