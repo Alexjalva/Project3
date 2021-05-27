@@ -8,6 +8,7 @@ import Login from "./pages/login";
 import SignUp from "./pages/SignUp";
 import AUTH from "./utils/AUTH";
 import Navbar from "./components/Navbar";
+import MyStuff from "./pages/MyStuff"
 
 function App() {
   const [loggedIn, setLoggedIn] = useState([]);
@@ -15,7 +16,6 @@ function App() {
 
   useEffect(() => {
     AUTH.getUser().then(res => {
-      console.log(res);
       if (!!res.data.user) {
         setLoggedIn(true);
         setUser(res.data.user)
@@ -42,6 +42,12 @@ function App() {
           </Route>}
           {loggedIn && <Route exact path="/SignUp">
             <Events />
+          </Route>}
+          {loggedIn && <Route exact path="/MyStuff">
+            <MyStuff />
+          </Route>}
+          {!loggedIn && <Route exact path="/MyStuff">
+            <Login />
           </Route>}
           {loggedIn && <Route exact path="/home">
             <Events props={user}/>

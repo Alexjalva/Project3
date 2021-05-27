@@ -38,5 +38,17 @@ module.exports = {
     db.User
       .findByIdAndUpdate( req.body.user , { $push: { events: req.body.eventId } })
       .catch(err => res.status(422).json(err));
+  },
+  getUserEvents: function(req, res) {
+    db.User
+      .findOne({username: req.params.username})
+      .then(user => res.json(user))
+      .catch(err => res.status(422).json(err));
+  },
+  getSavedEvent: function(req, res) {
+    db.Event  
+      .findOne({id: req.params.eventId})
+      .then(event => res.json(event))
+      .catch(err => res.status(422).json(err));
   }
 };

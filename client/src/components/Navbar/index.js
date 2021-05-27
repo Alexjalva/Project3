@@ -6,7 +6,7 @@ function Navbar() {
   return (
     <div class="topnav" id="myTopnav">
   <a href="/">BET ON IT!</a>
-  <a href="/Events">MY STUFF!</a>
+  <a href="/MyStuff">MY STUFF!</a>
   <a href="/Login" onClick={AUTH.logout}>Log out!</a>
 </div>
   );

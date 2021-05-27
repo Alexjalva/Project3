@@ -6,6 +6,12 @@ router.route("/")
   .get(eventController.findAll)
   .post(eventController.create);
 
+router.route("/:username")
+  .get(eventController.getUserEvents);
+
+router.route("/one/:eventId")
+  .get(eventController.getSavedEvent);
+
 router.route("/user")
   .post(eventController.pushToUser);
 

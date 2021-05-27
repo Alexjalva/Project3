@@ -51,7 +51,6 @@ function Events(props) {
                     <p>
                       Odds: {event.sites[0].odds.h2h[0]}
                     </p>
-                    <DeleteBtn onClick={() => console.log(event._id)} />
                     <AddBtn onClick={() => {API.saveEvent(event);
                                             API.saveToUser(user, event.id)} }/>
                   </ListItem>
