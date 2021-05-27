@@ -62,7 +62,7 @@ function SignUpForm() {
                         <div className="form-group">
                             <label htmlFor="inputUsername">username</label>
                             <input type="username" className="form-control" id="inputUsername" ref={usernameRef} />
-                            <small id="usernameHelp" className="form-text text-muted">This will be used to login to Lets Bet!.</small>
+                            <small id="usernameHelp" className="form-text text-muted">This will be used to login to BET ON IT!.</small>
                         </div>
                         <div className="form-group">
                             <label htmlFor="inputPassword">Create Password</label>

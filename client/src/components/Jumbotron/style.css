@@ -2,11 +2,12 @@
 
 .jumbotron {
     margin-top: 30px;
-    background-color: #eeeeee;
+    margin-right: 10px;
+    background-color: #393e46;
 }
 
 body {
-    background-image: url("https://cutewallpaper.org/21/professional-background-photos/Best-43-Professional-Dark-Background-on-HipWallpaper-Good-.jpg");
+    background-color: #eeeeee;
     font-family: 'Permanent Marker', cursive;
    }
 
