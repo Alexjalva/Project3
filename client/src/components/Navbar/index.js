@@ -1,11 +1,11 @@
 import React from "react";
 import "./style.css"
 
-function Nav() {
+function Navbar() {
   return (
     <div class="topnav" id="myTopnav">
   <a href="/">BET ON IT!</a>
-  <a href="/SignUp">REGISTER</a>
+  <a href="/Events">MY STUFF!</a>
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">
     <i class="fa fa-bars"></i>
   </a>
@@ -13,4 +13,4 @@ function Nav() {
   );
 }
 
-export default Nav;
+export default Navbar;
