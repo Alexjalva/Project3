@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(session({
   secret: process.env.APP_SECRET || 'this is the default passphrase',
   store: MongoStore.create({
-    mongoUrl:"mongodb://localhost/Betting-Odds-App"
+    mongoUrl:process.env.MONGODB_URI || "mongodb://localhost/Betting-Odds-App"
 }),
   resave: false,
   saveUninitialized: false
