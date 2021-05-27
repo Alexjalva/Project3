@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+.jumbotron {
+    margin-top: 30px;
+    margin-right: 10px;
+    background-color: #393e46;
+}
+
+body {
+    background-color: #eeeeee;
+    font-family: 'Permanent Marker', cursive;
+   }
+
+h1 {
+    font-family: 'Permanent Marker', cursive;
+    color: #ffd369;
+}

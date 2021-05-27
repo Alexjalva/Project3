@@ -33,6 +33,7 @@ function App() {
         <Switch>
         {!loggedIn && <Route exact path="/SignUp">
             <SignUp />
+<<<<<<< HEAD
           </Route>}
           {loggedIn && <Route exact path="/SignUp">
             <Events />
@@ -44,6 +45,16 @@ function App() {
             <Login />
           </Route>}
           {loggedIn && <Route exact path="/events/:query">
+=======
+          </Route>
+        <Route exact path="/Events">
+            <Events />
+          </Route>
+          <Route exact path={["/", "/Login"]}>
+            <Login />
+          </Route>
+          <Route exact path="/Events/:query">
+>>>>>>> 1035f2d611dfed5ed163cc7b78db83bac01412f2
             <EventDetail />
           </Route>}
           {loggedIn && <Route>
