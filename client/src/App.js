@@ -7,6 +7,7 @@ import Events from "./pages/Events"
 import Login from "./pages/login";
 import SignUp from "./pages/SignUp";
 import AUTH from "./utils/AUTH";
+import Navbar from "./components/Navbar";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState([]);
@@ -29,7 +30,12 @@ function App() {
   return (
     <Router>
       <div>
-        <Nav />
+      {!loggedIn && 
+            <Nav />
+          }
+          {loggedIn && 
+            <Navbar />
+          }
         <Switch>
           {!loggedIn && <Route exact path="/SignUp">
             <SignUp />
